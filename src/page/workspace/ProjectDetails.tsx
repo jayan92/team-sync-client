@@ -2,7 +2,6 @@ import { Separator } from "@/components/ui/separator";
 import ProjectAnalytics from "@/components/workspace/project/project-analytics";
 import ProjectHeader from "@/components/workspace/project/project-header";
 import TaskTable from "@/components/workspace/task/task-table";
-import React from "react";
 
 const ProjectDetails = () => {
   return (

@@ -7,7 +7,7 @@ import { useAuthContext } from "@/context/auth-provider";
 import { toast } from "@/hooks/use-toast";
 import { BASE_ROUTE } from "@/routes/common/routePaths";
 import { CheckIcon, CopyIcon, Loader } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const InviteMember = () => {
   const [copied, setCopied] = useState(false);

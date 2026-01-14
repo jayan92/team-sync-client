@@ -4,7 +4,6 @@ import useWorkspaceId from "@/hooks/use-workspace-id";
 import { getAvatarColor, getAvatarFallbackText } from "@/lib/helper";
 import { format } from "date-fns";
 import { Loader } from "lucide-react";
-import React from "react";
 
 const RecentMembers = () => {
   const workspaceId = useWorkspaceId();

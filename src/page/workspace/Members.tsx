@@ -2,7 +2,6 @@ import { Separator } from "@/components/ui/separator";
 import WorkspaceHeader from "@/components/workspace/common/workspace-header";
 import AllMembers from "@/components/workspace/member/all-members";
 import InviteMember from "@/components/workspace/member/invite-member";
-import React from "react";
 
 const Members = () => {
   return (

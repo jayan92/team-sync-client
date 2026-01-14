@@ -21,7 +21,8 @@ import { editProjectMutationFn } from "@/lib/api";
 import { ProjectType } from "@/types/api.type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Loader } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 

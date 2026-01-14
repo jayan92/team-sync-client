@@ -1,4 +1,4 @@
-import React from "react";
+// no React imports needed here
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { customEmojis } from "./custom-emojis";
@@ -7,9 +7,7 @@ interface EmojiPickerComponentProps {
   onSelectEmoji: (emoji: string) => void;
 }
 
-const EmojiPickerComponent: React.FC<EmojiPickerComponentProps> = ({
-  onSelectEmoji,
-}) => {
+const EmojiPickerComponent = ({ onSelectEmoji }: EmojiPickerComponentProps) => {
   // Handle emoji selection
   const handleEmojiSelect = (emoji: { native: string }) => {
     console.log(emoji, "emoji");

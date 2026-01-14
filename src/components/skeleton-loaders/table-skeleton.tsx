@@ -1,4 +1,3 @@
-import React from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface TableSkeletonProps {
@@ -6,10 +5,7 @@ interface TableSkeletonProps {
   rows?: number;
 }
 
-const TableSkeleton: React.FC<TableSkeletonProps> = ({
-  columns,
-  rows = 20,
-}) => {
+const TableSkeleton = ({ columns, rows = 20 }: TableSkeletonProps) => {
   return (
     <div className="w-full bg-white rounded-lg">
       {/* Table Header Skeleton */}

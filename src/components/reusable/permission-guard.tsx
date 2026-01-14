@@ -1,10 +1,10 @@
-import React from "react";
+import { ReactNode } from "react";
 import { PermissionType } from "@/constant";
 import { useAuthContext } from "@/context/auth-provider";
 
 type PermissionsGuardProps = {
   requiredPermission: PermissionType;
-  children: React.ReactNode;
+  children: ReactNode;
   showMessage?: boolean;
 };
 

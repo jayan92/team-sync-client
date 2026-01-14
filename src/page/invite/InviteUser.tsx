@@ -13,7 +13,6 @@ import { invitedUserJoinWorkspaceMutationFn } from "@/lib/api";
 import { BASE_ROUTE } from "@/routes/common/routePaths";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Loader } from "lucide-react";
-import React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const InviteUser = () => {

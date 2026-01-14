@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ArrowDown, ArrowUp, ChevronsUpDown, EyeOff } from "lucide-react";
-import React from "react";
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,11 +16,11 @@ interface DataTableColumnHeaderProps<TData, TValue>
   title: string;
 }
 
-const DataTableColumnHeader = ({
+const DataTableColumnHeader = <TData, TValue>({
   column,
   title,
   className,
-}: DataTableColumnHeaderProps<WebTransportDatagramDuplexStream, TValue>) => {
+}: DataTableColumnHeaderProps<TData, TValue>) => {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{title}</div>;
   }

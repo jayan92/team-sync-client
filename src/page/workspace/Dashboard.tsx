@@ -6,7 +6,6 @@ import RecentTasks from "@/components/workspace/task/recent-tasks";
 import WorkspaceAnalytics from "@/components/workspace/workspace-analytics";
 import useCreateProjectDialog from "@/hooks/use-create-project-dialog";
 import { Plus } from "lucide-react";
-import React from "react";
 
 const Dashboard = () => {
   const { onOpen } = useCreateProjectDialog();

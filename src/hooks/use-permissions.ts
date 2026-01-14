@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { PermissionType } from "./../../constant/index";
+import { PermissionType } from "@/constant";
 import { UserType, WorkspaceWithMembersType } from "@/types/api.type";
 
 const usePermissions = (
@@ -10,13 +10,13 @@ const usePermissions = (
 
   useEffect(() => {
     if (user && workspace) {
-      const member = workspace.members.find(
-        (member) => member.userId._id === user._id
-      );
+      const member = workspace.members.find((member) => {
+        const userId = member.userId as any;
+        if (typeof userId === "string") return userId === user._id;
+        return userId?._id === user._id;
+      });
 
-      if (member) {
-        setPermissions(member.role.permissions);
-      }
+      if (member) setPermissions(member.role.permissions);
     }
   }, [user, workspace]);
 

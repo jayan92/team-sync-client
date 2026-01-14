@@ -16,13 +16,14 @@ import {
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { Badge, Check, PlusCircle } from "lucide-react";
+import { Check, PlusCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import React, { useState } from "react";
 
 interface DataTableFacetedFilterProps {
   title?: string;
   options: {
-    lable: string;
+    label: React.ReactNode;
     value: string;
     icon?: React.ComponentType<{ className?: string }> | any;
   }[];
@@ -86,7 +87,7 @@ const DataTableFacetedFilter = ({
                         key={option.value}
                         className="rounded-sm px-1 font-normal"
                       >
-                        {option.lable}
+                        {option.label}
                       </Badge>
                     ))
                 )}

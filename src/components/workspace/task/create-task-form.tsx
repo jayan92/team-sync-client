@@ -39,7 +39,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { format } from "date-fns";
 import { CalendarIcon, Loader } from "lucide-react";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -354,8 +353,8 @@ const CreateTaskForm = (props: { projectId?: string; onClose: () => void }) => {
                           selected={field.value}
                           onSelect={field.onChange}
                           disabled={(date) =>
-                            date < new Date().setHours(0, 0, 0, 0) ||
-                            date > new Date("2100-12-31")
+                            date.getTime() < new Date().setHours(0, 0, 0, 0) ||
+                            date.getTime() > new Date("2100-12-31").getTime()
                           }
                           initialFocus
                           defaultMonth={new Date()}

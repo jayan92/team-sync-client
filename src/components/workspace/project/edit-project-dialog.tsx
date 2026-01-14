@@ -6,7 +6,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ProjectType } from "@/types/api.type";
-import React, { useState } from "react";
+import { useState } from "react";
 import EditProjectForm from "./edit-project-form";
 import { Edit3 } from "lucide-react";
 

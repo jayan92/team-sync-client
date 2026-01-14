@@ -1,7 +1,7 @@
 import useConfirmDialog from "@/hooks/use-confirm-dialog";
 import useCreateProjectDialog from "@/hooks/use-create-project-dialog";
 import useWorkspaceId from "@/hooks/use-workspace-id";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   SidebarGroup,
@@ -214,7 +214,7 @@ const NavProjects = () => {
         description={`Are you sure you want to delete ${
           context?.name || "this item"
         }? This action connot be undone.`}
-        consfirmText="Delete"
+        confirmText="Delete"
         cancelText="Cancel"
       />
     </>

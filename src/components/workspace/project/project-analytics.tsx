@@ -1,4 +1,3 @@
-import React from "react";
 import AnalyticsCard from "../common/analytics-card";
 import { useParams } from "react-router-dom";
 import useWorkspaceId from "@/hooks/use-workspace-id";
