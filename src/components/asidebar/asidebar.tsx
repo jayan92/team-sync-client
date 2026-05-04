@@ -19,6 +19,7 @@ import { Separator } from "../ui/separator";
 import NavMain from "./nav-main";
 import NavProjects from "./nav-projects";
 import { EllipsisIcon, Loader, LogOut } from "lucide-react";
+import ThemeToggle from "../theme-toggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -68,6 +69,9 @@ const Asidebar = () => {
 
         <SidebarFooter className="dark:bg-background">
           <SidebarMenu>
+            <SidebarMenuItem>
+              <ThemeToggle />
+            </SidebarMenuItem>
             <SidebarMenuItem>
               {isLoading ? (
                 <Loader

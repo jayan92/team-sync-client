@@ -18,27 +18,48 @@ em-emoji-picker {
 /* Custom scrollbar styles */
 .scrollbar {
   overflow-y: auto;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: rgba(176, 174, 174, 0.7) #ddd; /* Firefox */
-  transition: scrollbar-color 0.3s ease, scrollbar-width 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 8px; /* Scrollbar width */
+  width: 4px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: #ddd; /* Track color */
+  background: transparent;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background-color: gray; /* Thumb color */
-  border-radius: 100%; /* Rounded edges */
-  transition: background-color 0.3s ease; /* Smooth color change */
+  background-color: hsl(var(--border));
+  border-radius: 9999px;
 }
 
 .scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color: darkgray; /* Hover effect */
+  background-color: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* Sidebar scrollbar — thin, theme-aware, nearly invisible */
+[data-sidebar="content"] {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--sidebar-border)) transparent;
+}
+
+[data-sidebar="content"]::-webkit-scrollbar {
+  width: 3px;
+}
+
+[data-sidebar="content"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-sidebar="content"]::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--sidebar-border));
+  border-radius: 9999px;
+}
+
+[data-sidebar="content"]:hover::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--sidebar-foreground) / 0.25);
 }
 
 @layer base {
@@ -110,67 +131,67 @@ em-emoji-picker {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 222 20% 11%;
 
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 3.9%;
+    --card: 222 20% 14%;
 
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 3.9%;
+    --popover: 222 20% 14%;
 
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 0 0% 98%;
+    --primary: 224 70% 58%;
 
-    --primary-foreground: 0 0% 9%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 14.9%;
+    --secondary: 222 15% 22%;
 
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 92%;
 
-    --muted: 0 0% 14.9%;
+    --muted: 222 15% 18%;
 
-    --muted-foreground: 0 0% 63.9%;
+    --muted-foreground: 222 10% 60%;
 
-    --accent: 0 0% 14.9%;
+    --accent: 222 15% 22%;
 
-    --accent-foreground: 0 0% 98%;
+    --accent-foreground: 0 0% 92%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 72% 51%;
 
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 14.9%;
+    --border: 222 15% 21%;
 
-    --input: 0 0% 14.9%;
+    --input: 222 15% 24%;
 
-    --ring: 0 0% 83.1%;
+    --ring: 224 70% 58%;
 
-    --chart-1: 220 70% 50%;
+    --chart-1: 220 70% 55%;
 
-    --chart-2: 160 60% 45%;
+    --chart-2: 160 60% 48%;
 
-    --chart-3: 30 80% 55%;
+    --chart-3: 30 80% 58%;
 
-    --chart-4: 280 65% 60%;
+    --chart-4: 280 65% 62%;
 
-    --chart-5: 340 75% 55%;
+    --chart-5: 340 75% 58%;
 
-    --sidebar-background: 240 5.9% 10%;
+    --sidebar-background: 222 20% 9%;
 
     --sidebar-foreground: 240 4.8% 95.9%;
 
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 224.3 76.3% 55%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent: 222 15% 16%;
 
     --sidebar-accent-foreground: 240 4.8% 95.9%;
 
-    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-border: 222 15% 17%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }

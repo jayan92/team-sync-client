@@ -40,7 +40,7 @@ const RecentTasks = () => {
         </div>
       )}
 
-      <ul role="list" className="divide-y divide-gray-200">
+      <ul role="list" className="divide-y divide-border">
         {tasks.map((task) => {
           const name = task?.assignedTo?.name || "";
           const initials = getAvatarFallbackText(name);
@@ -49,32 +49,32 @@ const RecentTasks = () => {
           return (
             <li
               key={task._id}
-              className="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+              className="p-4 flex items-center justify-between hover:bg-muted/50 transition-colors"
             >
               {/* Left Section: Project, Code, Title, Due Date */}
               <div className="flex flex-col space-y-1 flex-grow">
                 {/* Project Info + Task Code */}
                 <div className="flex items-center gap-6">
-                  <span className="flex items-center gap-2 text-sm text-gray-600 font-medium">
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
                     <span className="text-xl leading-[1.4rem]">
                       {task.project?.emoji}
                     </span>
                     {task.project?.name}
                   </span>
 
-                  <span className="text-sm text-gray-600 font-medium rounded-md border px-2.5 py-0.5 ">
+                  <span className="text-sm text-muted-foreground font-medium rounded-md border px-2.5 py-0.5">
                     {task.taskCode}
                   </span>
                 </div>
 
                 {/* Task Title */}
-                <p className="text-md font-semibold text-gray-800 truncate">
+                <p className="text-md font-semibold text-foreground truncate">
                   {task.title}
                 </p>
 
                 {/* Due Date */}
                 {task.dueDate && (
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-muted-foreground">
                     Due: {format(task.dueDate, "PPP")}
                   </span>
                 )}

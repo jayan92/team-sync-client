@@ -189,6 +189,36 @@ const SignIn = () => {
             </CardContent>
           </Card>
 
+          <div className="rounded-lg border border-dashed bg-muted/40 px-4 py-3 text-sm">
+            <p className="font-medium text-foreground mb-2.5">
+              Test account credentials
+            </p>
+            <div className="space-y-1.5 text-muted-foreground mb-3">
+              <div className="flex items-center justify-between gap-4">
+                <span>Email</span>
+                <span className="font-mono text-foreground text-xs">
+                  alice@teamsync.dev
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-4">
+                <span>Password</span>
+                <span className="font-mono text-foreground text-xs">
+                  Alice@1234
+                </span>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                form.setValue("email", "alice@teamsync.dev");
+                form.setValue("password", "Alice@1234");
+              }}
+              className="w-full rounded-md border border-border bg-background py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
+            >
+              Use test account
+            </button>
+          </div>
+
           <div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary">
             By clicking continue, you agree to our{" "}
             <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
