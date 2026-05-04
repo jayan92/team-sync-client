@@ -1,50 +1,112 @@
-# React + TypeScript + Vite
+# TeamSync — Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React single-page application for TeamSync, a project and task management platform. Supports workspaces, projects, tasks, member management, and role-based permissions with a dark/light theme.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Layer | Technology |
+|---|---|
+| Framework | React 18 |
+| Build tool | Vite |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Component library | shadcn/ui (Radix UI) |
+| Data fetching | TanStack React Query |
+| Global state | Zustand |
+| Routing | React Router v7 |
+| Forms | React Hook Form + Zod |
+| Icons | Lucide React |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+├── components/
+│   ├── ui/              # shadcn/ui primitives
+│   ├── asidebar/        # Sidebar navigation and workspace switcher
+│   ├── workspace/       # Domain components (projects, tasks, members)
+│   └── theme-toggle.tsx # Light / dark / system theme switcher
+├── context/
+│   ├── auth-provider.tsx   # Auth context (user, workspace, permissions)
+│   ├── theme-provider.tsx  # Theme context with localStorage persistence
+│   └── query-provider.tsx  # React Query configuration
+├── hooks/               # Custom hooks (API, auth, workspace)
+├── lib/                 # Axios client, API functions, utilities
+├── page/                # Page components (auth, workspace, errors)
+├── routes/              # Route definitions and guards
+├── store/               # Zustand auth store
+└── types/               # TypeScript type definitions
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Prerequisites
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- Node.js 18+
+- TeamSync backend running (see [team-sync-backend](https://github.com/jayan92/team-sync-backend))
+
+---
+
+## Setup & Run
+
+### 1. Clone and install
+
+```bash
+git clone https://github.com/jayan92/team-sync-client.git
+cd team-sync-client
+npm install
 ```
+
+### 2. Configure environment variables
+
+Create a `.env` file in the root:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+```
+
+### 3. Start development server
+
+```bash
+npm run dev
+```
+
+App runs at `http://localhost:5173`.
+
+---
+
+## Available Scripts
+
+| Script | Description |
+|---|---|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Type-check and build for production |
+| `npm run preview` | Preview the production build locally |
+
+---
+
+## Features
+
+- **Authentication** — Email/password login, Google OAuth
+- **Workspaces** — Create and switch between multiple workspaces
+- **Projects** — Create projects with emoji, manage per workspace
+- **Tasks** — Full task lifecycle: Backlog → Todo → In Progress → In Review → Done
+- **Members** — Invite members via invite code, assign roles
+- **Role-based access** — Owner / Admin / Member permission levels
+- **Dark / Light theme** — Toggle in sidebar footer, persisted to localStorage
+- **Responsive** — Collapsible sidebar, mobile sheet navigation
+
+---
+
+## Test Account
+
+After running the backend seeder, use these credentials to explore the app:
+
+| Email | Password |
+|---|---|
+| alice@teamsync.dev | Alice@1234 |
